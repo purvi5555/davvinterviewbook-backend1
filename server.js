@@ -549,18 +549,12 @@ app.get("/getallexperiences", async(req, res)=>{
   const skip = parseInt(req.query.skip);
   const allExp = await Experience.find({}).skip(skip).limit(limit).sort({ _id: -1 })
   //console.log(allQues)
-  res.status(200).json(allExp);
+  res.status(200).json(allExp); 
   }catch(err) {
     console.log(err);
   }
 });
 
-if(process.env.NODE_ENV == 'production') {
-  app.use(express.static('client/build'));
-  app.get('*', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'client', 'build', 'index.html'));
-  });
- }
 
 app.listen(PORT, () => {
   console.log(`API running at Port ${PORT}`)

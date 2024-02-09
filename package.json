@@ -1,15 +1,14 @@
 {
   "name": "api",
-  "homepage": "https://github.com/poornima005/InterviewBook-backend/",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
   "scripts": {
     "predeploy": "npm run build",
     "deploy": "gh-pages -d build",
-    "build": "react-scripts --openssl-legacy-provider build",
-    "start": "node index.js",
-    "server": "nodemon index.js --ignore client"
+    "build": "react-scripts build",
+    "start": "node server.js",
+    "server": "nodemon server.js --ignore client"
   },
   "engines": {
     "node": "14.16.0"
